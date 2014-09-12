@@ -30,7 +30,7 @@ databases.forEach (val)->
   callback = (err,res,data)->
     addToList val.complete(data)
     if not --count
-      jf.writeFileSync 'rilp.json', list
+      jf.writeFileSync 'ripl.json', list
 
   url = val.url.replace '%HOST%',host
   switch val.method
