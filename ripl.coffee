@@ -12,6 +12,8 @@ databases = [{
       data:'remoteAddress=%HOST%&key=&_=',
       complete:(data)->
         retVal=[]
+        if not JSON.parse(data).domainArray
+          return
         JSON.parse(data).domainArray.forEach (val)->
           retVal.push val[0]
         retVal
